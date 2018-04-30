@@ -44,14 +44,14 @@ integrations:
   # adding awsKeys integration so that credentials are available to CI Job
   # http://docs.shippable.com/platform/integration/aws-keys/
   hub:
-    - integrationName: dr-aws-keys
-      type: amazonKeys
+    - integrationName: test-basic-ssh
+      type: sshKeys
 
 
 resources:
   - name: deploy-ecs-basic-image
     type: image
-    integration: dr-aws-keys
+    integration: test-basic-ssh
     pointer:
       sourceName: "660850653279.dkr.ecr.us-east-1.amazonaws.com/deploy-ecs-basic"
     seed:
