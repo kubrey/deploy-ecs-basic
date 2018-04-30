@@ -80,7 +80,7 @@ resources:
 
   - name: deploy-ecs-basic-ecs-cluster
     type: cluster
-    integration: dr-aws-keys
+    integration: test-basic-ssh
     pointer:
       sourceName : "deploy-ecs-basic" #name of the cluster to which we are deploying
       region: "us-east-1"
