@@ -4,6 +4,7 @@ language: none
 build:
   pre_ci:
     # - docker build -t ci-image:latest -f ./.shippable/ci-image/Dockerfile ./.shippable/ci-image
+    - echo `whoami`
 
   pre_ci_boot:
     # image_name: ci-image
@@ -25,12 +26,15 @@ build:
 #    - ./.shippable/bin/deploy-to-server.sh
 #    - ./.shippable/bin/report-to-github.sh
     # - ./.shippable/bin/on-success.sh
+    - echo "Successfull !!1"
 
   cache: false
 branches:
   only:
     - master
     - dev-advanced
+  except:
+    - issue*
 integrations:
   # hub:
   #   - integrationName: CIRegistry
