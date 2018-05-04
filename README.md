@@ -1,6 +1,7 @@
-# Deploy a Node.js application to Amazon ECS
+# Build docker-compose app
 
-[![Run Status](https://api.shippable.com/projects/58f6fcddd1780a07007bba3f/badge?branch=master)](https://app.shippable.com/github/devops-recipes/deploy-ecs-basic) [![Coverage Badge](https://api.shippable.com/projects/58f6fcddd1780a07007bba3f/coverageBadge?branch=master)](https://app.shippable.com/github/devops-recipes/deploy-ecs-basic)
+[![Run Status](https://api.shippable.com/projects/5ae705842c5e9807003a93bd/badge?branch=master)](https://app.shippable.com/github/kubrey/deploy-ecs-basic)
+[![Coverage Badge](https://api.shippable.com/projects/5ae705842c5e9807003a93bd/coverageBadge?branch=master)](https://app.shippable.com/github/kubrey/deploy-ecs-basic)
 
 ![AyeAye](https://github.com/devops-recipes/deploy-ecs-basic/blob/master/public/resources/images/captain.png)
 
