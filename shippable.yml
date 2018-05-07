@@ -10,8 +10,12 @@ build:
     # image_name: ci-image
     # image_tag: latest
     # pull: false
+    options: "-v /routes:/app"
 
   ci:
+    - cp -R . /app
+    - pip install -U docker-compose
+    - sleep 10
    ## - ./.shippable/bin/build.sh
   # - ./.shippable/bin/push-to-registry.sh
 
