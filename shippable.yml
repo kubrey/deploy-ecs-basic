@@ -4,7 +4,8 @@ language: none
 build:
   pre_ci:
     # - docker build -t ci-image:latest -f ./.shippable/ci-image/Dockerfile ./.shippable/ci-image
-    - chmod +x .shippable/build/build.sh
+    - echo `pwd`
+    - chmod +x ./.shippable/build/build.sh
     - echo `whoami`
 
   pre_ci_boot:
@@ -29,7 +30,7 @@ build:
 #    - ./.shippable/bin/deploy-to-server.sh
 #    - ./.shippable/bin/report-to-github.sh
     # - ./.shippable/bin/on-success.sh
-    - echo "Successfull !!1"
+    - echo "Successfull"
 
   cache: false
 branches:
