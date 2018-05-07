@@ -4,6 +4,7 @@ language: none
 build:
   pre_ci:
     # - docker build -t ci-image:latest -f ./.shippable/ci-image/Dockerfile ./.shippable/ci-image
+    - chmod +x .shippable/build/build.sh
     - echo `whoami`
 
   pre_ci_boot:
