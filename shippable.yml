@@ -13,9 +13,7 @@ build:
     options: "-v /routes:/app"
 
   ci:
-    - cp -R . /app
-    - pip install -U docker-compose
-    - sleep 10
+    - ./.shippable/build/build.sh
    ## - ./.shippable/bin/build.sh
   # - ./.shippable/bin/push-to-registry.sh
 

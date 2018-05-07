@@ -1,0 +1,45 @@
+language: none
+env:
+  global:
+    - secure: eUfdy3DSBapDUa4uI+ynd+2LmQ5rvOqiL09mffcI3825R7Cs7LKidakqOynap1Vo1+B3Y5/WewQEty0J7fHafFFQNx9kGRcy283uX3nRD0dNAYCBeZs4AacnOvIjfYnUKMc1UPQPAgv1c9f81yoGHkAeT1YmORXGFsYUXB+SReca9zR3s2yRuLgu7MERRDwKyaECNZoQ9R/xEg9km9fGEQmGIBpVyoXDMY72J36RlzFYH6uvqg9uwPK54ncLUEqCGaori0Hw1EwaCr9udRn/G9JRi7GThPVp2CLRCln92DcxuC2OJ1nO/cDzcyVxUekFk1Q7V20pxPpZ+AyHRWIOAw==
+
+build:
+  pre_ci:
+    - docker build -t ci-image:latest -f ./.shippable/ci-image/Dockerfile ./.shippable/ci-image
+
+  pre_ci_boot:
+    image_name: ci-image
+    image_tag: latest
+    pull: false
+
+  ci:
+   ## - ./.shippable/bin/build.sh
+  - ./.shippable/bin/push-to-registry.sh
+
+  post_ci:
+     #- ./.shippable/bin/push-to-registry.sh
+#    - ./.shippable/bin/run-tests.sh
+
+  on_failure:
+#    - ./.shippable/bin/on-failure.sh
+
+  on_success:
+#    - ./.shippable/bin/deploy-to-server.sh
+#    - ./.shippable/bin/report-to-github.sh
+    - ./.shippable/bin/on-success.sh
+
+  cache: false
+branches:
+  only:
+    - alpha
+    - beta
+    - production
+    - release-*
+    - citest-*
+integrations:
+  hub:
+    - integrationName: CIRegistry
+      type: dockerRegistryLogin
+  key:
+    - integrationName: deployServerSSHAutorization
+      type: sshKey
